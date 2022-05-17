@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Cards from "./components/Cards";
 
 function App() {
+  const cardsData = [
+    {
+      heading: "Mobile Operating System",
+      L1: "Android",
+      L2: "Blackberry",
+      L3: "iPhone",
+      L4: "Windows Phone",
+    },
+    {
+      heading: "Mobile Manufacturers",
+      L1: "Samsung",
+      L2: "HTC",
+      L3: "Micromax",
+      L4: "Apple",
+    },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {cardsData.map((el) => (
+        <Cards {...el} />
+      ))}
     </div>
   );
 }
